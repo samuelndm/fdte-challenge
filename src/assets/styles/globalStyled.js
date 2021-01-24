@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
@@ -66,4 +66,11 @@ export default createGlobalStyle`
   ul {
     list-style: none;
   }
-`
+
+  #root {
+    --primary-color: #00D68F;
+    --primary-dark-color: #004A45;
+    --primary-transparent-color:#00D68F ;
+    --primary-gradient-color: linear-gradient(90deg, #43E97B 0%, #38F9D7 100%);
+  }
+`;
