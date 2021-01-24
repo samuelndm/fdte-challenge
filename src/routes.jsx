@@ -1,15 +1,16 @@
 import React from "react";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
-
-import MapPage from "pages/Map";
+import { BrowserRouter as Router, Switch, Route, Redirect  } from "react-router-dom";
+import {HomePage, MapPage} from "./pages";
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Switch>
-        <Route component={MapPage} path="/map" />
+        <Route exact path='/' component={HomePage} />
+        <Route path="/map" component={MapPage}  />
+        <Redirect from='*' to='/' />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 
