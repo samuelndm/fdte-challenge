@@ -1,6 +1,6 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
-import { Container } from "./styles";
+import { Container } from "./styled";
 
 const Spinner = () => {
   return (

@@ -6,3 +6,4 @@ export { default as LinkHandler } from "./UtilComponents/LinkHandler";
 export { default as Modal } from "./UtilComponents/Modal";
 export { default as Spinner } from "./UtilComponents/Spinner";
 export { default as Sidebar } from "./Sidebar";
+export { default as Character } from "./Character";

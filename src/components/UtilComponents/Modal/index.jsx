@@ -9,7 +9,7 @@ import {
   Footer,
   CloseButton,
   CloseIcon,
-} from "./styles";
+} from "./styled";
 
 const Modal = ({
   openModal,

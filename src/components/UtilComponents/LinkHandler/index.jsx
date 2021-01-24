@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { isExternalUrl } from "../../../utils";
-import { Container, LinkAnchor, Title } from "./styles";
+import { Container, LinkAnchor, Title } from "./styled";
 
 const LinkHandler = ({
   url,
