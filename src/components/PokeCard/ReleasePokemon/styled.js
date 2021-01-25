@@ -12,7 +12,7 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
-  background: #ff3d71;
+  background: var(--action-color);
   border-radius: 42px;
   cursor: pointer;
   font-family: Open Sans;
