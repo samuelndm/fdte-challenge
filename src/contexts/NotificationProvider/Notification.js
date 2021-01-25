@@ -5,12 +5,19 @@ import { makeStyles } from "@material-ui/core/styles";
 
 function AlertComponent(props) {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <MuiAlert elevation={6} variant='filled' {...props} />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    "& .MuiAlert-message": {
+      margin: "auto 0",
+      padding: "5px",
+      fontSize: "12px",
+      fontWeight: 600,
+      textAlign: "center",
+    },
     "& > * + *": {
       marginTop: theme.spacing(2),
     },
