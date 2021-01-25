@@ -19,23 +19,44 @@ const PokeCard = ({ pokemon }) => {
   return (
     <S.Container>
       <S.Header />
-      <Image sprites={pokemon.sprites} />
+      <Image
+        sprites={pokemon.sprites}
+        isEditable={currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM}
+      />
 
       <S.Body>
-        <Name name={pokemon.name} />
+        <Name
+          name={pokemon.name}
+          isEditable={
+            currentPokemonStatus === CURRENT_POKEMON_STATUS.CAPTURED ||
+            currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM
+          }
+        />
         <S.Info>
-          <HP stats={pokemon.stats} />
+          <HP
+            stats={pokemon.stats}
+            isEditable={currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM}
+          />
 
           <S.DivisorVertical />
-          <Height height={pokemon.height} />
+          <Height
+            height={pokemon.height}
+            isEditable={currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM}
+          />
 
           <S.DivisorVertical />
-          <Weight weight={pokemon.weight} />
+          <Weight
+            weight={pokemon.weight}
+            isEditable={currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM}
+          />
         </S.Info>
 
         <S.DivisorHorizontal />
 
-        <Types types={pokemon.types} />
+        <Types
+          types={pokemon.types}
+          isEditable={currentPokemonStatus === CURRENT_POKEMON_STATUS.CUSTOM}
+        />
 
         {currentPokemonStatus === CURRENT_POKEMON_STATUS.NEW ? (
           <Pokeball pokemon={pokemon} />
