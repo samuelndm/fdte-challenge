@@ -6,7 +6,7 @@ import Name from "./Name";
 import HP from "./HP";
 import Height from "./Height";
 import Weight from "./Weight";
-import Types from "./Type";
+import Types from "./Types";
 import Pokeball from "./Pokeball";
 
 const PokeCard = ({ pokemon }) => {

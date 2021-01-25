@@ -7,16 +7,14 @@ const Type = ({ type }) => {
   const [typeInfo, setTypeInfo] = useState({});
 
   useEffect(() => {
-    const info = POKEMON_TYPES[type.name];
+    const info = POKEMON_TYPES[type?.name];
     setTypeInfo(info || {});
   }, [type]);
 
   if (!type) return null;
   return (
-    <S.Container color={typeInfo.color}>
-      <S.Name>
-        {(typeInfo.name && typeInfo.name.pt_br) || "Indisponível"}
-      </S.Name>
+    <S.Container color={typeInfo?.color}>
+      <S.Name>{typeInfo?.name?.pt_br || "Indisponível"}</S.Name>
     </S.Container>
   );
 };
