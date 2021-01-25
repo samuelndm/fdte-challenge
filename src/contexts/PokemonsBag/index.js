@@ -40,7 +40,27 @@ const PokemonsBag = ({ children }) => {
     }
   };
 
-  const deletePokemon = (pokemon) => {};
+  const deletePokemon = (pokemon) => {
+    try {
+      validatePokemon(pokemon);
+
+      const newPokemonsBag = [...pokemonsBag];
+      for (let i = 0; i < newPokemonsBag.length; i++) {
+        if (newPokemonsBag[i]?.id === pokemon.id) {
+          newPokemonsBag[i] = null;
+          setPokemonsBag([...newPokemonsBag]);
+          break;
+        }
+      }
+    } catch (err) {
+      console.error(err);
+
+      createNotification({
+        type: "error",
+        message: err.message,
+      });
+    }
+  };
 
   return (
     <PokemonsBagContext.Provider

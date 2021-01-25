@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useCurrentPokemonContext } from "contexts/CurrentPokemonProvider";
+import { CURRENT_POKEMON_STATUS } from "utils/constants";
 import * as S from "./styled";
 import Image from "./Image";
 import Name from "./Name";
@@ -8,8 +10,11 @@ import Height from "./Height";
 import Weight from "./Weight";
 import Types from "./Types";
 import Pokeball from "./Pokeball";
+import ReleasePokemon from "./ReleasePokemon";
 
 const PokeCard = ({ pokemon }) => {
+  const { currentPokemonStatus } = useCurrentPokemonContext();
+
   if (!pokemon) return null;
   return (
     <S.Container>
@@ -32,7 +37,11 @@ const PokeCard = ({ pokemon }) => {
 
         <Types types={pokemon.types} />
 
-        <Pokeball pokemon={pokemon} />
+        {currentPokemonStatus === CURRENT_POKEMON_STATUS.NEW ? (
+          <Pokeball pokemon={pokemon} />
+        ) : (
+          <ReleasePokemon pokemon={pokemon} />
+        )}
       </S.Body>
     </S.Container>
   );

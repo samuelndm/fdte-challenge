@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import pokeball from "../../../assets/images/pokeball.png";
 
-export const Container = styled.div`
+export const Container = styled.button`
   margin: 0 auto;
   width: 80px;
   height: 80px;
@@ -9,6 +9,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 45px;
+  border: none;
   background: url(${pokeball}) no-repeat center center;
   cursor: pointer;
 

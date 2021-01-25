@@ -1,22 +1,23 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { getPokemonById, getPokemonSpecies } from "services/endpoints/pokemon";
 import { getRandomInteger } from "utils";
-// import { handleCurrentPokemonStatus } from "utils/pokemon";
-// import { usePokemonsBagContext } from "contexts/PokemonsBag";
+import { handleCurrentPokemonStatus } from "utils/pokemon";
+import { usePokemonsBagContext } from "contexts/PokemonsBag";
 
 const CurrentPokemonContext = createContext();
 
 export const useCurrentPokemonContext = () => useContext(CurrentPokemonContext);
 
 const CurrentPokemonProvider = ({ children }) => {
-  // const { pokemonsBag } = usePokemonsBagContext();
+  const { pokemonsBag } = usePokemonsBagContext();
   const [currentPokemon, setCurrentPokemon] = useState(null);
+  const [currentPokemonStatus, setCurrentPokemonStatus] = useState("");
   const [isLoadingPokemon, setIsLoadingPokemon] = useState(false);
 
-  // useEffect(() => {
-  //   const pokemon = handleCurrentPokemonStatus(currentPokemon, pokemonsBag);
-  //   setCurrentPokemon(pokemon);
-  // }, [currentPokemon, pokemonsBag]);
+  useEffect(() => {
+    const status = handleCurrentPokemonStatus(currentPokemon, pokemonsBag);
+    setCurrentPokemonStatus(status);
+  }, [currentPokemon, pokemonsBag]);
 
   const loadPokemonSpecies = async () => {
     try {
@@ -52,6 +53,7 @@ const CurrentPokemonProvider = ({ children }) => {
       value={{
         currentPokemon,
         setCurrentPokemon,
+        currentPokemonStatus,
         getRandomPokemon,
         isLoadingPokemon,
       }}

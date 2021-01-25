@@ -12,26 +12,16 @@ export const handlePokemonStats = (stats, statsType) => {
 
 export const handleCurrentPokemonStatus = (currentPokemon, pokemonsBag) => {
   const pokemon = pokemonsBag.find(
-    (pokemonBag) =>
-      pokemonBag && pokemonBag.id === currentPokemon && currentPokemon.id
+    (pokemonBag) => pokemonBag?.id === currentPokemon?.id
   );
 
   if (!pokemon) {
-    return {
-      ...currentPokemon,
-      currentStatus: CURRENT_POKEMON_STATUS.NEW,
-    };
+    return CURRENT_POKEMON_STATUS.NEW;
   }
 
-  if (pokemon.currentStatus === CURRENT_POKEMON_STATUS.CAPTURED) {
-    return {
-      ...currentPokemon,
-      currentStatus: CURRENT_POKEMON_STATUS.CAPTURED,
-    };
+  if (pokemon.isCustom) {
+    return CURRENT_POKEMON_STATUS.CUSTOM;
   }
 
-  return {
-    ...currentPokemon,
-    currentStatus: CURRENT_POKEMON_STATUS.CUSTOM,
-  };
+  return CURRENT_POKEMON_STATUS.CAPTURED;
 };
