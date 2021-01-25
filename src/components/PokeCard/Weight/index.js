@@ -6,13 +6,13 @@ const Weight = ({ weight }) => {
   return (
     <S.Stats>
       <S.StatsLabel>PESO</S.StatsLabel>
-      <S.StatsContent>{`${weight / 10} kg`}</S.StatsContent>
+      <S.StatsContent>{`${(weight || 0) / 10} kg`}</S.StatsContent>
     </S.Stats>
   );
 };
 
 Weight.propTypes = {
-  weight: PropTypes.string.isRequired,
+  weight: PropTypes.number.isRequired,
 };
 
 export default Weight;
