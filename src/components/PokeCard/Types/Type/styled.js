@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 10px 0;
+  margin: 10px 5px;
   width: 99px;
   height: 32px;
   background: ${({ color }) => color || "#000"};
