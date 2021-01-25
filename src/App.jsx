@@ -1,12 +1,15 @@
 import React from "react";
-import GlobalStyled from "assets/styles/globalStyled";
+import Providers from "contexts/Providers";
 import Routes from "./routes";
+import GlobalStyled from "assets/styles/globalStyled";
 
 function App() {
   return (
     <>
+      <Providers>
+        <Routes />
+      </Providers>
       <GlobalStyled />
-      <Routes />
     </>
   );
 }

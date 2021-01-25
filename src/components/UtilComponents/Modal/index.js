@@ -20,7 +20,7 @@ const Modal = ({
   footer,
   children,
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsOpen(openModal);
@@ -32,21 +32,21 @@ const Modal = ({
     setIsOpen(false);
 
     return setTimeout(() => {
-      closeModal(false);
+      closeModal(null);
     }, 400);
   };
 
   if (!openModal) return null;
   return (
     <Container>
-      <Content size={size} isOpen={isOpen}>
+      <Content size={size} isOpen={isOpen} hasChildren={children}>
         {children ? (
           <>
             <CloseButton
               hasChildren={children}
               onClick={(e) => handleCloseModal(e)}
             >
-              <CloseIcon className='fas fa-times' />
+              <CloseIcon className="fas fa-times" />
             </CloseButton>
 
             {children}
@@ -57,7 +57,7 @@ const Modal = ({
               {header}
 
               <CloseButton onClick={(e) => closeModal(false)}>
-                <CloseIcon className='fas fa-times' />
+                <CloseIcon className="fas fa-times" />
               </CloseButton>
             </Header>
 

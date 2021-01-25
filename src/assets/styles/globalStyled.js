@@ -74,6 +74,18 @@ export default createGlobalStyle`
     --primary-gradient-color: linear-gradient(90deg, #43E97B 0%, #38F9D7 100%);
     --action-color: #FF3D71;
     --action-dark-color: #DB2C66;
+
+    --neutral-100-color: #FFFFFF;
+    --neutral-200-color: #F7F9FC;
+    --neutral-300-color: #EDF1F7;
+    --neutral-400-color: #E4E9F2;
+    --neutral-500-color: #C5CEE0;
+    --neutral-600-color: #C5CEE0;
+    --neutral-700-color: #2E3A59;
+    --neutral-800-color: #222B45;
+    --neutral-900-color: #192038;
+    --neutral-1000-color: #151A30;
+    --neutral-1100-color: #101426;
   }
 `;
 

@@ -2,15 +2,20 @@ import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   z-index: 99999;
+  padding: 0 15px;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 0 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 575px) {
+    padding: 0;
+    height: 100vh;
+  }
 `;
 
 export const Background = styled.div`
@@ -28,7 +33,7 @@ export const Background = styled.div`
 export const ContentOpenAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
 
   to {
@@ -45,7 +50,7 @@ export const ContentClosingAnimation = keyframes`
 
   to {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
 `;
 
@@ -54,7 +59,8 @@ export const Content = styled.div`
   margin: auto;
   position: relative;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: ${({ hasChildren }) =>
+    hasChildren ? "transparent" : "#fff"};
   animation: ${({ isOpen }) =>
       isOpen ? ContentOpenAnimation : ContentClosingAnimation}
     0.5s ease-in-out;
@@ -69,7 +75,7 @@ export const Content = styled.div`
         return "400px";
 
       default:
-        break;
+        return "auto";
     }
   }};
 
@@ -117,15 +123,20 @@ export const Footer = styled.footer`
 
 export const CloseButton = styled.button`
   z-index: 999999;
-  position: ${({ hasChildren }) => (hasChildren ? "absolute" : "relative")};
-  right: ${({ hasChildren }) => (hasChildren ? "5px" : "0")};
   margin: 0 5px 0 30px;
-  padding: 5px;
+  width: 38px;
+  height: 38px;
+  position: ${({ hasChildren }) => (hasChildren ? "absolute" : "relative")};
+  top: ${({ hasChildren }) => (hasChildren ? "5px" : "0")};
+  right: ${({ hasChildren }) => (hasChildren ? "5px" : "0")};
   cursor: pointer;
-  background: transparent;
+  border: 2px solid #8f9bb3;
+  border-radius: 1000px;
+  background: #f7f9fc;
 `;
 
 export const CloseIcon = styled.i`
-  color: #fff;
+  color: #2e3a59;
   font-size: 24px;
+  font-weight: 300p;
 `;

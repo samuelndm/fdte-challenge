@@ -7,3 +7,4 @@ export { default as Modal } from "./UtilComponents/Modal";
 export { default as Spinner } from "./UtilComponents/Spinner";
 export { default as Sidebar } from "./Sidebar";
 export { default as Character } from "./Character";
+export { default as PokeCard } from "./PokeCard";
