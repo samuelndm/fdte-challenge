@@ -2,17 +2,15 @@ import styled from "styled-components";
 import pokeball from "../../../assets/images/pokeball.png";
 
 export const Container = styled.div`
+  margin: 0 auto;
   width: 80px;
   height: 80px;
   position: absolute;
-  left: 40%;
-  bottom: 16%;
+  left: 0;
+  right: 0;
+  bottom: 45px;
   background: url(${pokeball}) no-repeat center center;
-
   cursor: pointer;
 
-  @media screen and (max-width: 350px) {
-    left: 36%;
-    bottom: 27%;
-  }
+  @media screen and (max-width: );
 `;
