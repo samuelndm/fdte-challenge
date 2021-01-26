@@ -1,0 +1,40 @@
+import React from "react";
+import PropTypes from "prop-types";
+import chevron from "assets/images/chevronDownBlack.png";
+import * as S from "./styled";
+
+const InputNumber = ({
+  className,
+  label,
+  placeholder,
+  name,
+  suffix,
+  value,
+  onChange,
+}) => (
+  <S.InputNumberWrapper className={className}>
+    {label && <S.Label>{label}</S.Label>}
+
+    <S.InputContent>
+      <S.Input value="" type="number" placeholder={placeholder} name={name} />
+
+      {suffix && <S.InputSuffix>{suffix}</S.InputSuffix>}
+
+      <S.InputActions>
+        <S.Arrow src={chevron} className="increase" alt="Mais" />
+        <S.Arrow src={chevron} className="decrease" alt="Menos" />
+      </S.InputActions>
+    </S.InputContent>
+  </S.InputNumberWrapper>
+);
+
+InputNumber.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+};
+
+export default InputNumber;

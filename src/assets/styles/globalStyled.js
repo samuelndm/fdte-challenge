@@ -87,6 +87,25 @@ export default createGlobalStyle`
     --neutral-1000-color: #151A30;
     --neutral-1100-color: #101426;
   }
+
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 24px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 24px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark-color);
+  }
 `;
 
 export const PageContainer = styled.div`

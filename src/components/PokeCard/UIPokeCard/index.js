@@ -1,0 +1,10 @@
+export { default as CreatePokemon } from "./CreatePokemon";
+export { default as Image } from "./Image";
+export { default as Name } from "./Name";
+export { default as Pokeball } from "./Pokeball";
+export { default as ReleasePokemon } from "./ReleasePokemon";
+export { default as Abilities } from "./Abilities";
+export { default as Statistics } from "./Statistics";
+export { default as Stats } from "./Stats";
+export { default as Types } from "./Types";
+export { default as Section } from "./Section";

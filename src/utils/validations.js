@@ -1,3 +1,5 @@
+import { isBagFull } from "./pokemonsBag";
+
 export const validatePokemon = (pokemon) => {
   if (!pokemon) {
     throw new Error("Pokémon Inválido");
@@ -5,11 +7,13 @@ export const validatePokemon = (pokemon) => {
 };
 
 export const validateIsBagFull = (bag) => {
-  for (let i = 0; i < bag.length; i++) {
-    if (!bag[i]) {
-      return true;
-    }
+  if (isBagFull(bag)) {
+    throw new Error("Limite máximo de pokémons atingido!");
   }
+};
 
-  throw new Error("Limite máximo de pokémons atingido!");
+export const validatePokemonId = (id) => {
+  if (!Number.isInteger(id) || id <= 0) {
+    throw new Error("Id Inválido");
+  }
 };

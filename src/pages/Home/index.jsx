@@ -1,17 +1,17 @@
 import React from "react";
 import * as S from "./styled";
-import { LinkHandler } from "components";
-import PokemonLogo from '../../assets/images/pokemonLogo.png'
+import * as UI from "components/UIComponents";
+import pokemonLogo from "../../assets/images/pokemonLogo.png";
 
 const HomePage = () => (
   <S.HomeWrapper>
     <S.Container>
-  <LinkHandler url='/map'>
-    <S.Content>
-      <S.Logo src={PokemonLogo} alt='logo da home' />
-      <S.Button>START</S.Button>
-    </S.Content>
-  </LinkHandler>
+      <UI.LinkHandler url="/map">
+        <S.Content>
+          <S.Logo src={pokemonLogo} alt="Logo da home" />
+          <S.Button>START</S.Button>
+        </S.Content>
+      </UI.LinkHandler>
     </S.Container>
   </S.HomeWrapper>
 );

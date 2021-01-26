@@ -11,7 +11,11 @@ export const handlePokemonStats = (stats, statsType) => {
 };
 
 export const handleCurrentPokemonStatus = (currentPokemon, pokemonsBag) => {
-  const pokemon = pokemonsBag.find(
+  if (currentPokemon?.isCustom) {
+    return CURRENT_POKEMON_STATUS.CUSTOM;
+  }
+
+  const pokemon = pokemonsBag?.find(
     (pokemonBag) => pokemonBag?.id === currentPokemon?.id
   );
 
@@ -19,9 +23,11 @@ export const handleCurrentPokemonStatus = (currentPokemon, pokemonsBag) => {
     return CURRENT_POKEMON_STATUS.NEW;
   }
 
-  if (pokemon.isCustom) {
-    return CURRENT_POKEMON_STATUS.CUSTOM;
-  }
-
   return CURRENT_POKEMON_STATUS.CAPTURED;
+};
+
+export const concatenateAbilities = (abilities) => {
+  let string = abilities?.map(({ ability }) => ability?.name || "")?.join(", ");
+
+  return string;
 };
