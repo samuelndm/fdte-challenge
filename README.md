@@ -1,4 +1,4 @@
-## This is a solution using ReactJS to a frontend challenge
+## This is a challenge solution using ReactJS to a frontend challenge
 
 
 In the project directory, you can run:
